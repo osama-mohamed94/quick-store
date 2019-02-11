@@ -1,0 +1,132 @@
+@import 'variables';
+@import 'mixin-and-extend';
+@import 'components';
+
+/*HOMEPAGE*/
+/*Start Packages*/
+
+.packages{
+    padding-top: 55px;
+    padding-bottom: 35px;
+    @media (min-width: 768px){
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+    background-color: #f7f7f7;
+    @include header;
+    .cards{
+        color: #fff;
+        $numloop: 0;//For Each
+        @each $i in #4d98d4, #0f7c10, #231f20, #957bb8, #d71d46, #1ed760, #5c6576, #ff9900{
+            $numloop: $numloop + 1;
+            [class*="col-"]:nth-child(#{$numloop}) .card-part{
+                background-color: $i;
+            }
+        }
+        .card-part{
+            @include prefix(border-radius, 10px);
+            padding: 20px 5px 25px 5px;
+            margin-bottom: 30px;
+            @include transition(0.3s, ease-in-out);
+            &:hover{
+                @include prefix(transform, scale(1.08, 1.08));
+            }
+            .icon{
+                margin-bottom: 25px;
+            }
+            p{
+                margin-bottom: 0;
+            }
+            p:first-of-type{
+                font-weight: bold;
+                font-size: 1.5625rem;
+                margin-bottom: 15px;
+            }
+            .line{
+                width: 60px;
+                height: 1px;
+                background-color: #fff;
+                margin: auto;
+                margin-bottom: 15px;
+            }
+            p:last-of-type{
+                font-size: 1rem;
+                margin-bottom: 35px;
+            }
+            .btn-h{
+                padding: 10px 30px;
+                background-color: #fff;
+                @include prefix(border-radius, 6px);
+                border: 2px solid #fff;
+                font-size: 1.125rem;
+                color: #00615f;
+                &:hover{
+                    background-color: transparent;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+/*End Packages*/
+/*Start Email*/
+
+.email{
+    padding-top: 55px;
+    padding-bottom: 55px;
+    border-top: 2px solid #7baab4;
+    @media (min-width: 768px){
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    @include header;
+    .em{
+        input{
+            @include prefix(border-radius, 6px);
+        }
+        input:first-child{
+            height: 65px;
+            border: 1px solid rgba(0, 111, 111, 0.12);
+            @include prefix(box-shadow, 0px 0px 10px rgba(0, 79, 73, 0.15));
+            background-image: url(../images/icon/email.png);
+            background-repeat: no-repeat;
+            @include prefix(background-size, 25px);
+            background-position: calc(100% - 15px) center;
+            padding-right: 55px;
+            font-weight: normal;
+        }
+        .btn-submit{
+            font-size: 1.25rem;
+            color: #fff;
+            background-color: #007779;
+            border: 2px solid #fff !important;
+            border: 0;
+            cursor: pointer;
+            padding: 10px 25px;
+            top: 50%;
+            left: 8px;
+            @include prefix(transform, translateY(-50%));
+            @include transition(0.3s, ease-in-out);
+            @include prefix(border-radius, 6px);
+            @media (max-width: 575px){
+                position: static !important;
+                width: 100%;
+                margin-top: 50px;
+                padding-top: 17.5px;
+                padding-bottom: 17.5px;
+            }
+            &:hover{
+                background-color: transparent;
+                color: #007779;
+                border-color: #007779 !important;
+            }
+        }
+        @include placeholder{
+            font-size: 1.125rem;
+            color: #007374;
+        }
+    }
+}
+
+/*End Email*/

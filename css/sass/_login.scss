@@ -1,0 +1,175 @@
+@import 'variables';
+@import 'mixin-and-extend';
+@import 'components';
+
+/*LOGIN*/
+/*Start Header*/
+
+.header-section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @extend %overlay;
+    @media (min-width: 768px){
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include header;
+    .header{
+        margin-bottom: 0px;
+        h2{
+            color: #fff;
+            &:before{
+                color: #fff;
+            }
+        }
+    }
+}
+
+/*End Header*/
+/*Start Form Login*/
+
+.form-login{
+    background-color: #f7f7f7;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    @media (min-width: 768px){
+        padding-top: 100px;
+        padding-bottom: 150px;
+    }
+    .row{
+        background-color: #fff;
+        @include prefix(border-radius, 10px);
+        padding: 20px 15px;
+        @media (min-width: 768px){
+            padding: 60px 35px;
+        }
+        form{
+            font-size: 1.125rem;
+            label{
+                color: #212121;
+                margin-bottom: 15px;
+                &:before{
+                    content: "*";
+                    margin-left: 5px;
+                    margin-bottom: 5px;
+                }
+            }
+            input{
+                @include prefix(background-size, 20px);
+                background-position: calc(100% - 10px) center;
+                background-repeat: no-repeat;
+                border: 1px solid rgba(100, 144, 129, 0.40);
+                height: 60px;
+                width: 100%;
+                @include prefix(border-radius, 10px);
+                padding-right: 50px;
+            }
+            @include placeholder{
+                font-size: 1.125rem;
+                color: rgba(38, 38, 38, 0.30);
+            }
+            .email-user,
+            .password-user{
+                span{
+                    width: 1px;
+                    height: 30px;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    top: 58px;
+                    right: 40px;
+                }
+            }
+            .email-user{
+                input{
+                    background-image: url(../images/icon/email-green.png);
+                }
+                margin-bottom: 30px;
+            }
+            .password-user{
+                margin-bottom: 25px;
+                input{
+                    background-image: url(../images/icon/key-green.png);
+                }
+            }
+            .remembar-me{
+                margin: 0;
+                color: #006d6d;
+                &:before{
+                    content: "";
+                }
+                input{
+                    display: none;
+                    &:checked + span{
+                        background-color: #006e6e;
+                    }
+                    &:checked + span:before{
+                        display: block;
+                    }
+                }
+                span{
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    top: 3px;
+                    background-color: #ccc;
+                    margin-left: 8px;
+                    &:before{
+                        font-family: Font Awesome\ 5 Free;
+                        font-weight: 900;
+                        content: "\f00c";
+                        color: #fff;
+                        font-size: 0.8125rem;
+                        position: absolute;
+                        @extend %inside;
+                        display: none;
+                    }
+                }
+            }
+            .btn-submit{
+                background-color: #00b349;
+                color: #fff;
+                border: 2px solid #00b349;
+                @include prefix(border-radius, 6px);
+                font-size: 1.125rem;
+                padding: 10px 40px;
+                margin-top: 30px;
+                cursor: pointer;
+                @include transition(0.3s, ease-in-out);
+                &:hover{
+                    background-color: transparent;
+                    color: #00b349;
+                }
+            }
+        }
+        .register{
+            @media (max-width: 767px){
+                margin-top: 40px;
+            }
+            p{
+                color: rgba(0, 62, 54, 0.40);
+                font-size: 1.125rem;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                @media (min-width: 768px){
+                    font-size: 1.375rem;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                }
+            }
+            .btn-h{
+                font-size: 1.125rem;
+                color: #fff;
+                background-color: #00b349;
+                border: 2px solid #00b349;
+                @include prefix(border-radius, 6px);
+                padding: 10px 45px;
+                @include transition(0.3s, ease-in-out);
+                &:hover{
+                    background-color: transparent;
+                    color: #00b349;
+                }
+            }
+        }
+    }
+}
+
+/*End Form Login*/

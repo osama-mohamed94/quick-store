@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'mixin-and-extend';
+@import 'components';
+/*Start Slider*/
+
+.slider{
+    padding-top: 150px;
+    padding-bottom: 70px;
+    background: {
+        image: url(../images/slider/bg.jpg);
+        repeat: no-repeat;
+    }
+    @include prefix(background-size, cover);
+    .text{
+        color: #fff;
+        img{
+            top: -110px;
+            right: 50%;
+            @include prefix(transform, translateX(50%));
+            @media (min-width: 992px){
+                right: 250px;
+                @include prefix(transform, translateX(0));
+            }
+        }
+        h1{
+            font-size: 1.375rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            @media (min-width: 576px){
+                font-size: 1.625rem;
+            }
+        }
+        p{
+            font-size: 1.125rem;
+            font-weight: normal;
+            margin-bottom: 40px;
+            @media (min-width: 576px){
+                font-size: 1.25rem;
+            }
+        }
+        a{
+            background-color: #fff;
+            font-size: 1.125rem;
+            font-weight: normal;
+            color: #00615f;
+            padding: 10px 25px;
+            border: 2px solid #fff;
+            &:hover{
+                background-color: transparent;
+                border-color: #fff;
+            }
+        }
+    }
+}
+
+/*End Slider*/

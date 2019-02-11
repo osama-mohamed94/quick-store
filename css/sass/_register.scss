@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'mixin-and-extend';
+@import 'components';
+
+/*REGISTER*/
+/*Start Form Login*/
+
+.info-account.register{
+    padding-top: 60px;
+    @media (min-width: 768px){
+        padding-top: 110px;
+    }
+    .login{
+        form{
+            .email-user:nth-of-type(2){
+                input{
+                    background-image: url(../images/icon/email-green.png);
+                }
+            }
+            .email-user:nth-of-type(3){
+                input{
+                    background-image: url(../images/icon/phone-green.png);
+                }
+            }
+            .email-user:nth-of-type(4),
+            .email-user:nth-of-type(5){
+                input{
+                    background-image: url(../images/icon/key-green.png);
+                }
+            }
+            > .btn-submit{
+                width: 100%;
+                cursor: pointer;
+                @media (min-width: 576px){
+                    width: auto;
+                }
+            }
+        }
+    }
+    .home{
+        margin-top: 40px;
+        @media (min-width: 992px){
+            margin-top: 0;
+        }
+        .img-link{
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            width: 100%;
+            img{
+                width: 100%;
+                @media (min-width: 576px){
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+/*End Form Login*/

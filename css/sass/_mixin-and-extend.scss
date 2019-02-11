@@ -1,0 +1,29 @@
+//MIXIN
+//Transition 
+@mixin transition($time, $type-move){
+    -webkit-transition: all $time $type-move;
+    -moz-transition: all $time $type-move;
+    -ms-transition: all $time $type-move;
+    -o-transition: all $time $type-move;
+    transition: all $time $type-move;
+}
+//Prefix
+@mixin prefix($pro, $value){
+    @each $i in (webkit, moz, ms, o){
+        #{'-' + $i + '-' + $pro}: $value !important;
+    }
+    #{$pro}: $value !important;
+}
+//Opacity
+@mixin opacity($num){
+    $int: $num * 100;
+    filter:Alpha(opacity=$int) !important;
+    opacity: $num !important;
+}
+//PlaceHolder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}

@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'mixin-and-extend';
+@import 'components';
+
+/*STORE CARDS*/
+/*Start Packages*/
+
+.packages.store-cards{
+    .cards{
+        .card-part{
+            padding: 15px;
+            p:first-of-type{
+                font-size: 1.25rem;
+            }
+            .info{
+                margin-top: 10px;
+            }
+            .button-option{
+                margin-top: 25px;
+                > div{
+                    &:first-of-type{
+                        margin-left: 5px;
+                        @media (max-width: 575px){
+                            margin-left: 0;
+                            margin-bottom: 15px;
+                        }
+                    }
+                    &:last-of-type{
+                        margin-right: 5px;
+                        @media (max-width: 575px){
+                            margin-right: 0;
+                        }
+                    }
+                    .btn-h{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*End Packages*/

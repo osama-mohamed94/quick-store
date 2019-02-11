@@ -1,0 +1,87 @@
+@import 'variables';
+@import 'mixin-and-extend';
+@import 'components';
+
+/*MY ACCOUNT*/
+/*Start Header*/
+
+.header-section{
+    .header{
+        margin-bottom: 0px;
+        h2{
+            color: #fff;
+            &:before{
+                color: #fff;
+            }
+        }
+        h3{
+            color: #00b349;
+            font-size: 1.625rem;
+            margin-top: 20px;
+            margin-bottom: 0
+        }
+    }
+}
+
+/*End Header*/
+/*Start My Account*/
+
+.my-account{
+    background-color: #f7f7f7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @media (min-width: 768px){
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .info{
+        background-color: #fff;
+        padding: 35px 20px;
+        p{
+            margin-bottom: 30px;
+            padding: 7px;
+            &:nth-of-type(even){
+                background-color: #eee;
+            }
+            & span,
+            & input{
+                color: #003d34;
+                font-size: 1.125rem;
+                @media (min-width: 576px){
+                    font-size: 1.25rem;
+                }
+            }
+            & input{
+                border: 1px solid rgba(100, 144, 129, 0.4);
+                padding: 10px;
+                @include prefix(border-radius, 6px);
+                @media (max-width: 575px){
+                    width: 100%;
+                    margin-top: 10px;
+                }
+            }
+            & span:first-child{
+                font-weight: bold;
+            }
+            & input:nth-child(2){
+                font-weight: normal;
+            }
+        }
+        .btn-submit{
+            color: #fff;
+            background-color: #00b349;
+            @include prefix(border-radius, 6px);
+            padding: 10px 30px;
+            border: 2px solid #00b349;
+            @include transition(0.3s, ease-in-out);
+            margin-top: 40px;
+            cursor: pointer;
+            &:hover{
+                background-color: transparent;
+                color: #00b349;
+            }
+        }
+    }
+}
+
+/*End My Account*/
